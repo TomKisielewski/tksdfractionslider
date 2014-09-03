@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="1.6" client="site" method="upgrade">
+	<name>tksdfractionslider</name>
+	<author>Tomasz Kisielewski</author>
+	<creationDate>August 2014</creationDate>
+	<copyright>Copyright (C) 2014 Tomasz Kisielewski / tkstudiodesign</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3 </license>
+	<authorEmail>tom.kisielewski@gmail.com</authorEmail>
+	<authorURL>http://www.tkstudiodesign.com</authorURL>
+	<version>1.0</version>
+	<description>TKSD fractionslider.A joomla responsive image slider module.</description>	
+	<files>
+		<filename>mod_tksdfractionslider.xml</filename>
+		<filename module="mod_tksdfractionslider">mod_tksdfractionslider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="load_jquery" type="radio" default="1" label="Enable jQuery?" description="Turn on or off inlcuded jQuery. Will also call in a noconflict script.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>				
+			</fieldset>
+			<fieldset name="moreoptions" label="More Slider Options">
+				<field name="fullWidth" type="radio" default="1" label="Enable Full Width?" description="Enable full width">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="controls" type="radio" default="1" label="Enable Controls?" description="Enable slider controls">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pager" type="radio" default="1" label="Enable Pager?" description="Enable Pager">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="responsive" type="radio" default="1" label="Responsive" description="Enable responsive slider">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pauseOnHover" type="radio" default="1" label="Pause on hover" description="Pauses slider on hover">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="backgroundAnimation" type="radio" default="0" label="Background Animation" description="Background Animations">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="increase" type="radio" default="1" label="Increase" description="if set, slider is allowed to get bigger than basic dimensions">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pager" type="radio" default="1" label="Pager" description="Pager">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="dimension1" type="text" default="1500" label="Width" description="Width"/>
+				<field name="dimension2" type="text" default="850" label="Height" description="Height"/>
+				<field name="slideTransitionSpeed" type="text" default="2000" label="Slide Transition Speed" description="Slide Transition Speed in miliseconds"/>
+			</fieldset>						
+			<fieldset name="images" label="MOD_TKSDFRACTIONSLIDER_IMAGES_LABEL">
+				<field name="image1" type="media" directory="stories" label="Image 1"/>
+				<field name="image1alt" type="text" default="" label="Alt tag"/>			
+				<field name="image1cap1" type="textarea" default="" label="Image 1 caption 1" description="Caption for first image" filter="raw"/>
+				<field name="image1cap1BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image1cap1dataEaseIn1" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image1cap1dataPositionX1" type="text" default="300" label="Caption Position X"/>
+				<field name="image1cap1dataPositionY1" type="text" default="30" label="Caption Position Y"/>
+				<field name="image1cap1dataIn1" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image1cap1dataOut1" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image1cap2" type="textarea" default="" label="Image 1 caption 2" description="Caption for second image" filter="raw"/>
+				<field name="image1cap2BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image1cap2dataEaseIn2" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image1cap2dataPositionX2" type="text" default="400" label="Caption Position X"/>
+				<field name="image1cap2dataPositionY2" type="text" default="60" label="Caption Position Y"/>
+				<field name="image1cap2dataIn2" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image1cap2dataOut2" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image1cap3" type="textarea" default="" label="Image 3 caption 3" description="Caption for third image" filter="raw"/>
+				<field name="image1cap3BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image1cap3dataEaseIn3" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image1cap3dataPositionX3" type="text" default="500" label="Caption Position X"/>
+				<field name="image1cap3dataPositionY3" type="text" default="90" label="Caption Position Y"/>
+				<field name="image1cap3dataIn3" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image1cap3dataOut3" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer" hr="true" />			
+				<field name="image2" type="media" directory="stories" label="Image 2"/>
+				<field name="image2alt" type="text" default="" label="Alt tag"/>
+				<field name="image2cap2" type="textarea" default="" label="Image 2 caption 1" description="Caption 1 for second image" filter="raw"/>
+				<field name="image2cap2BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image2cap2dataEaseIn2" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image2cap2dataPositionX2" type="text" default="300" label="Caption Position X"/>
+				<field name="image2cap2dataPositionY2" type="text" default="30" label="Caption Position Y"/>
+				<field name="image2cap2dataIn2" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image2cap2dataOut2" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image2cap3" type="textarea" default="" label="Image 2 caption 2" description="Caption 2 for second image" filter="raw"/>
+				<field name="image2cap3BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image2cap3dataEaseIn3" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image2cap3dataPositionX3" type="text" default="400" label="Caption Position X"/>
+				<field name="image2cap3dataPositionY3" type="text" default="60" label="Caption Position Y"/>
+				<field name="image2cap3dataIn3" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image2cap3dataOut3" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image2cap4" type="textarea" default="" label="Image 2 caption 3" description="Caption 3 for second image" filter="raw"/>
+				<field name="image2cap4BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image2cap4dataEaseIn4" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image2cap4dataPositionX4" type="text" default="500" label="Caption Position X"/>
+				<field name="image2cap4dataPositionY4" type="text" default="90" label="Caption Position Y"/>
+				<field name="image2cap4dataIn4" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image2cap4dataOut4" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer2" hr="true" />				
+				<field name="image3" type="media" directory="stories" label="Image 3"/>
+				<field name="image3alt" type="text" default="" label="Alt tag"/>
+				<field name="image3cap3" type="textarea" default="" label="Image 3 caption 1" description="Caption 1 for third image" filter="raw"/>
+				<field name="image3cap3BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image3cap3dataEaseIn3" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image3cap3dataPositionX3" type="text" default="300" label="Caption Position X"/>
+				<field name="image3cap3dataPositionY3" type="text" default="30" label="Caption Position Y"/>
+				<field name="image3cap3dataIn3" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image3cap3dataOut3" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image3cap4" type="textarea" default="" label="Image 3 caption 2" description="Caption 2 for third image" filter="raw"/>
+				<field name="image3cap4BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image3cap4dataEaseIn4" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image3cap4dataPositionX4" type="text" default="400" label="Caption Position X"/>
+				<field name="image3cap4dataPositionY4" type="text" default="60" label="Caption Position Y"/>
+				<field name="image3cap4dataIn4" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image3cap4dataOut4" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image3cap5" type="textarea" default="" label="Image 3 caption 3" description="Caption 3 for third image" filter="raw"/>
+				<field name="image3cap5BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image3cap5dataEaseIn5" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image3cap5dataPositionX5" type="text" default="500" label="Caption Position X"/>
+				<field name="image3cap5dataPositionY5" type="text" default="90" label="Caption Position Y"/>
+				<field name="image3cap5dataIn5" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image3cap5dataOut5" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer3" hr="true" />				
+				<field name="image4" type="media" directory="stories" label="Image 4"/>
+				<field name="image4alt" type="text" default="" label="Alt tag"/>
+				<field name="image4cap4" type="textarea" default="" label="Image 4 caption 1" description="Caption 1 for fourth image" filter="raw"/>
+				<field name="image4cap4BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image4cap4dataEaseIn4" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image4cap4dataPositionX4" type="text" default="300" label="Caption Position X"/>
+				<field name="image4cap4dataPositionY4" type="text" default="30" label="Caption Position Y"/>
+				<field name="image4cap4dataIn4" type="list" default="left"  label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image4cap4dataOut4" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image4cap5" type="textarea" default="" label="Image 4 caption 2" description="Caption 2 for fourth image" filter="raw"/>
+				<field name="image4cap5BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image4cap5dataEaseIn5" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image4cap5dataPositionX5" type="text" default="400" label="Caption Position X"/>
+				<field name="image4cap5dataPositionY5" type="text" default="60" label="Caption Position Y"/>
+				<field name="image4cap5dataIn5" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image4cap5dataOut5" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image4cap6" type="textarea" default="" label="Image 4 caption 3" description="Caption 3 for fourth image" filter="raw"/>
+				<field name="image4cap6BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image4cap6dataEaseIn6" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image4cap6dataPositionX6" type="text" default="500" label="Caption Position X"/>
+				<field name="image4cap6dataPositionY6" type="text" default="90" label="Caption Position Y"/>
+				<field name="image4cap6dataIn6" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image4cap6dataOut6" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>											
+				<field type="spacer" name="myspacer4" hr="true" />				
+				<field name="image5" type="media" directory="stories" label="Image 5"/>
+				<field name="image5alt" type="text" default="" label="Alt tag"/>
+				<field name="image5cap5" type="textarea" default="" label="Image 5 caption 1" description="Caption 1 for fifth image" filter="raw"/>
+				<field name="image5cap5BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image5cap5dataEaseIn5" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image5cap5dataPositionX5" type="text" default="300" label="Caption Position X"/>
+				<field name="image5cap5dataPositionY5" type="text" default="30" label="Caption Position Y"/>
+				<field name="image5cap5dataIn5" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image5cap5dataOut5" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image5cap6" type="textarea" default="" label="Image 5 caption 2" description="Caption 2 for fifth image" filter="raw"/>
+				<field name="image5cap6BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image5cap6dataEaseIn6" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image5cap6dataPositionX6" type="text" default="400" label="Caption Position X"/>
+				<field name="image5cap6dataPositionY6" type="text" default="60" label="Caption Position Y"/>
+				<field name="image5cap6dataIn6" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image5cap6dataOut6" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image5cap7" type="textarea" default="" label="Image 5 caption 3" description="Caption 3 for fifth image" filter="raw"/>
+				<field name="image5cap7BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image5cap7dataEaseIn7" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image5cap7dataPositionX7" type="text" default="500" label="Caption Position X"/>
+				<field name="image5cap7dataPositionY7" type="text" default="90" label="Caption Position Y"/>
+				<field name="image5cap7dataIn7" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image5cap7dataOut7" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer5" hr="true" />				
+				<field name="image6" type="media" directory="stories" label="Image 6"/>
+				<field name="image6alt" type="text" default="" label="Alt tag"/>
+				<field name="image6cap6" type="textarea" default="" label="Image 6 caption 1" description="Caption 1 for sixth image" filter="raw"/>
+				<field name="image6cap6BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image6cap6dataEaseIn6" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image6cap6dataPositionX6" type="text" default="300" label="Caption Position X"/>
+				<field name="image6cap6dataPositionY6" type="text" default="30" label="Caption Position Y"/>
+				<field name="image6cap6dataIn6" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image6cap6dataOut6" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image6cap7" type="textarea" default="" label="Image 6 caption 2" description="Caption 2 for sixth image" filter="raw"/>
+				<field name="image6cap7BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image6cap7dataEaseIn7" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image6cap7dataPositionX7" type="text" default="400" label="Caption Position X"/>
+				<field name="image6cap7dataPositionY7" type="text" default="60" label="Caption Position Y"/>
+				<field name="image6cap7dataIn7" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image6cap7dataOut7" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image6cap8" type="textarea" default="" label="Image 6 caption 3" description="Caption 3 for sixth image" filter="raw"/>
+				<field name="image6cap8BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image6cap8dataEaseIn8" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image6cap8dataPositionX8" type="text" default="500" label="Caption Position X"/>
+				<field name="image6cap8dataPositionY8" type="text" default="90" label="Caption Position Y"/>
+				<field name="image6cap8dataIn8" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image6cap8dataOut8" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer6" hr="true" />				
+				<field name="image7" type="media" directory="stories" label="Image 7"/>
+				<field name="image7alt" type="text" default="" label="Alt tag"/>
+				<field name="image7cap7" type="textarea" default="" label="Image 7 caption 1" description="Caption 1 for seventh image" filter="raw"/>
+				<field name="image7cap7BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image7cap7dataEaseIn7" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image7cap7dataPositionX7" type="text" default="300" label="Caption Position X"/>
+				<field name="image7cap7dataPositionY7" type="text" default="30" label="Caption Position Y"/>
+				<field name="image7cap7dataIn7" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image7cap7dataOut7" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image7cap8" type="textarea" default="" label="Image 7 caption 2" description="Caption 2 for seventh image" filter="raw"/>
+				<field name="image7cap8BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image7cap8dataEaseIn8" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image7cap8dataPositionX8" type="text" default="400" label="Caption Position X"/>
+				<field name="image7cap8dataPositionY8" type="text" default="60" label="Caption Position Y"/>
+				<field name="image7cap8dataIn8" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image7cap8dataOut8" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image7cap9" type="textarea" default="" label="Image 7 caption 3" description="Caption 3 for seventh image" filter="raw"/>
+				<field name="image7cap9BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image7cap9dataEaseIn9" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image7cap9dataPositionX9" type="text" default="500" label="Caption Position X"/>
+				<field name="image7cap9dataPositionY9" type="text" default="90" label="Caption Position Y"/>
+				<field name="image7cap9dataIn9" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image7cap9dataOut9" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer7" hr="true" />			
+				<field name="image8" type="media" directory="stories" label="Image 8"/>
+				<field name="image8alt" type="text" default="" label="Alt tag"/>
+				<field name="image8cap8" type="textarea" default="" label="Image 8 caption 1" description="Caption 1 for eighth image" filter="raw"/>
+				<field name="image8cap8BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image8cap8dataEaseIn8" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image8cap8dataPositionX8" type="text" default="300" label="Caption Position X"/>
+				<field name="image8cap8dataPositionY8" type="text" default="30" label="Caption Position Y"/>
+				<field name="image8cap8dataIn8" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image8cap8dataOut8" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image8cap9" type="textarea" default="" label="Image 8 caption 2" description="Caption 2 for eighth image" filter="raw"/>
+				<field name="image8cap9BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image8cap9dataEaseIn9" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image8cap9dataPositionX9" type="text" default="400" label="Caption Position X"/>
+				<field name="image8cap9dataPositionY9" type="text" default="60" label="Caption Position Y"/>
+				<field name="image8cap9dataIn9" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image8cap9dataOut9" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image8cap10" type="textarea" default="" label="Image 8 caption 3" description="Caption 3 for eighth image" filter="raw"/>
+				<field name="image8cap10BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image8cap10dataEaseIn10" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image8cap10dataPositionX10" type="text" default="500" label="Caption Position X"/>
+				<field name="image8cap10dataPositionY10" type="text" default="90" label="Caption Position Y"/>
+				<field name="image8cap10dataIn10" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image8cap10dataOut10" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>												
+				<field type="spacer" name="myspacer8" hr="true" />				
+				<field name="image9" type="media" directory="stories" label="Image 9"/>
+				<field name="image9alt" type="text" default="" label="Alt tag"/>
+				<field name="image9cap9" type="textarea" default="" label="Image 9 caption 1" description="Caption 1 for ninth image" filter="raw"/>
+				<field name="image9cap9BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image9cap9dataEaseIn9" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image9cap9dataPositionX9" type="text" default="300" label="Caption Position X"/>
+				<field name="image9cap9dataPositionY9" type="text" default="30" label="Caption Position Y"/>
+				<field name="image9cap9dataIn9" type="list" default="left" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image9cap9dataOut9" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image9cap10" type="textarea" default="" label="Image 9 caption 2" description="Caption 2 for ninth image" filter="raw"/>
+				<field name="image9cap10BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image9cap10dataEaseIn10" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image9cap10dataPositionX10" type="text" default="400" label="Caption Position X"/>
+				<field name="image9cap10dataPositionY10" type="text" default="60" label="Caption Position Y"/>
+				<field name="image9cap10dataIn10" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image9cap10dataOut10" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image9cap11" type="textarea" default="" label="Image 9 caption 3" description="Caption 3 for ninth image" filter="raw"/>
+				<field name="image9cap11BackgroundColor" type="color" default="red" label="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_LABEL" description="MOD_TKSDFRACTIONSLIDER_CAP1_BG_COLOR_DESCRIPTION" />
+				<field name="image9cap11dataEaseIn11" type="list" default="easeOutBounce" label="MOD_TKSDFRACTIONSLIDER_EASE_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_EASE_IN_DESCRIPTION">
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="image9cap11dataPositionX11" type="text" default="500" label="Caption Position X"/>
+				<field name="image9cap11dataPositionY11" type="text" default="90" label="Caption Position Y"/>
+				<field name="image9cap11dataIn11" type="list" default="" label="MOD_TKSDFRACTIONSLIDER_DATA_IN" description="MOD_TKSDFRACTIONSLIDER_DATA_IN_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="image9cap11dataOut11" type="list" default="right" label="MOD_TKSDFRACTIONSLIDER_DATA_OUT" description="MOD_TKSDFRACTIONSLIDER_DATA_OUT_DESCRIPTION">
+					<option value="none">None</option>
+					<option value="fade">Fade</option>
+					<option value="left">Left</option>
+					<option value="topLeft">Top Left</option>
+					<option value="bottomLeft">Bottom Left</option>
+					<option value="right">Right</option>
+					<option value="topRight">Top Right</option>
+					<option value="bottomRight">Bottom Right</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>								
+			</fieldset>			
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL"
+				description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" 
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+				description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
