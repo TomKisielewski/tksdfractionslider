@@ -75,7 +75,7 @@ abstract class mod_tksdfractionsliderHelper{
 	return $imgsAndCaps;   		
 	}		
 
-	public static function load_jquery(&$params){
+	public static function load_jquery(&$params){   
 		if($params->get('load_jquery')){
 			JLoader::import( 'joomla.version' );
 			$version = new JVersion();
